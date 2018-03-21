@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Mac分配系统</title>
+	<script type="text/javascript" src="./mac.js"></script>
+</head>
+<body>
+
+	<h1>Mac分配系统</h1>
+
+	<p>1.添加MAC到MAC池</p>
+	<form  name="form1">
+	(1)添加 MAC: <input type="txt" name="addmac1"/>
+	<button type="button" value="1" onclick="return CheckAddMac(document.form1.addmac1.value)">到MAC池</button> 
+	</form>
+	<br>添加MAC格式如右:(00:0c:29:72:ad:d8)
+    <br>
+    <div id="AddMacTxtHint">
+    <b>
+    <table border='1'>
+    <tr>
+    <th>MAC地址添加执行结果</th>
+    </tr>
+    <td>NULL</td>
+    </table>
+    </b>
+    </div>
+    <br>
+
+    <form  name="form2">
+    (2)批量添加MAC: 从MAC段<input type="txt" name="addmac2"/>到<input type="txt" name="addmac3"/>
+    <button type="button" value="2" onclick="return CheckAddMacRange(document.form2.addmac2.value,document.form2.addmac3.value)">添加到MAC池</button> 
+    </form>
+    <br>添加MAC格式如右:(00:0c:29:72:ad:d8),MAC段后面必须大于前面
+    <br>
+    <div id="MacInfoRangeTxtHint">
+    <b>
+    <table border='1'>
+    <tr>
+    <th>MAC段添加执行结果</th>
+    </tr>  
+    <tr>
+    <td>NULL</td>
+    </tr>
+    </table>
+    </b>
+    </div>
+
+	<p>2.查询MAC使用情况(已用数,未用数,总数)</p>
+	<form name="form3">
+	<button type="button" value="3" onclick="QueryMacInfo(this.value)">查询MAC使用情况</button>
+	</form>
+    <br>
+	<div id="MacInfoTxtHint">
+    <b>
+    <table border='1'>
+    <tr>
+    <th>已使用数</th>
+    <th>未使用数</th>
+    <th>总数</th>
+    </tr>  
+    <tr>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    </tr>
+    </table>
+    </b>
+    </div>
+    <br>
+
+	<p>3.查询指定MAC的使用情况(MAC,机型,操作时间)</p>
+	<form name="form4">
+	查询 MAC: <input type="txt" name="macinfo"/>
+	<button type="button" value="4" onclick="return CheckOneMacInfo(document.form4.macinfo.value)">使用情况</button> 
+	</form>
+	<br>查询MAC格式如右:(AA:BB:29:72:ad:d9)
+    <br>
+    <div id="OneMacInfoTxtHint">
+    <b>
+    <table border='1'>
+    <tr>
+    <th>MAC</th>
+    <th>机型</th>
+    <th>操作时间</th>
+    </tr>  
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    </table> 
+    </b>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
